@@ -1,16 +1,16 @@
 public class BuyedProductEntity {
 	private String username;
-	private String storeownername;
+	private String storename;
 	private String productname;
 	private String amount;
 	private String bname;
 	private String pprice;
 	private String shippingaddress;
 
-	public BuyedProductEntity(String username,String storeownername, String productname, String amount, String bname, String pprice,
+	public BuyedProductEntity(String username,String storename, String productname, String amount, String bname, String pprice,
 			String shippingaddress) {
 		this.username = username;
-		this.storeownername=storeownername;
+		this.storename=storename;
 		this.productname = productname;
 		this.amount = amount;
 		this.bname = bname;
@@ -25,12 +25,12 @@ public class BuyedProductEntity {
 	public void setUserName(String username) {
 		this.username = username;
 	}
-	public String getStowerOwnerName() {
-		return storeownername;
+	public String getStoreName() {
+		return storename;
 	}
 
-	public void setStoreOwnerName(String storeownername) {
-		this.storeownername = storeownername;
+	public void setStoreName(String storename) {
+		this.storename = storename;
 	}
 	public String getproductName() {
 		return productname;

@@ -1,4 +1,3 @@
-
 public class check_product_validation {
 	public boolean ValidProduct;
 	public boolean ValidAmount;
@@ -16,7 +15,7 @@ public class check_product_validation {
 		return ValidProduct;
 	}
 
-	public boolean Is_Amount_Valid(String bamount) throws Exception {
+	public boolean Is_Amount_Valid(String bamount) throws  Exception {
 		Integer num1, num2;
 		ValidAmount = false;
 		for (int i = 0; i < new ProductOfStoreowner().ProductOfStoreownerDatabase.size(); i++) {

@@ -1,4 +1,3 @@
-
 public class Discount {
 	public boolean User_already_exist(String uname) throws Exception {
 		boolean FoundUser = false;
@@ -10,7 +9,7 @@ public class Discount {
 		return FoundUser;
 	}
 
-	public void User_Is_Storeowner(String uname, String pprice, String bamount) throws Exception {
+	public String User_Is_Storeowner(String uname, String pprice, String bamount) throws Exception {
 		Integer num1 = Integer.valueOf(bamount);
 		boolean Found;
 		Found = User_already_exist(uname);
@@ -39,9 +38,10 @@ public class Discount {
 			s3 = price3 - (0.30 * Double.valueOf(pprice));
 			pprice = (Double.toString(s3));
 		}
+		return pprice;
 	}
 
-	public void User_Is_User(String uname, String bamount, String pprice) throws Exception {
+	public String User_Is_User(String uname, String bamount, String pprice) throws Exception {
 		Integer num1 = Integer.valueOf(bamount);
 		boolean Found;
 		Found = User_already_exist(uname);
@@ -64,5 +64,7 @@ public class Discount {
 			s = price - (0.15 * Double.valueOf(pprice));
 			pprice = (Double.toString(s));
 		}
+		return pprice;
 	}
+	
 }
