@@ -1,3 +1,7 @@
-youmnaMohamed|nada_hatem|Shampo|1|Clear|190|Haram
-nesma_thabet|nada_hatem|Shampo|2|Loreal|170.0|Haram
-alaa_el_lol|nada_hatem|Shampo|2|Loreal|140.0|October
+youmnaMohamed|laylaStore|Shampo|1|Clear|190|Haram
+nesma_thabet|laylaStore|Shampo|2|Loreal|170.0|Haram
+alaa_el_lol|laylaStore|Shampo|2|Loreal|140.0|October
+nesma_thabet|Raya|mobile|3|lenovo|6000|Giza
+nesma_thabet|NadaStore|mobile|2|iphone|6000|Haram
+alaa_el_lol|NadaStore|mobile|2|iphone|6000|Dokki
+alaa_el_lol|laylaStore|Shampo|2|Pantene|200|Fesial

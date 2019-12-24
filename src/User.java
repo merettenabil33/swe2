@@ -11,7 +11,7 @@ public class User extends systemUser {
 		   Scanner userInput3 = new Scanner(System.in);
 		   System.out.println("Your username is:");
 		   String Uname = userInput3.nextLine();
-		   System.out.println("Store owner account's name is:");
+		   System.out.println("Store name is:");
 			String Sname = userInput3.nextLine();
 		   System.out.println("name of product is:");
 		   String Pname = userInput3.nextLine();

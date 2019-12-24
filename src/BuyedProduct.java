@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-
 @SuppressWarnings("unused")
 public class BuyedProduct {
 	private String username;
-	private String storeownername;
+	private String storename;
 	private String productname;
 	protected String amount;
 	private String bname;
@@ -11,10 +10,10 @@ public class BuyedProduct {
 	private String shippingaddress;
 	ArrayList<BuyedProductEntity> BuyedProductDatabase = new ArrayList<BuyedProductEntity>();
 
-	public BuyedProduct(String uname,String storeownername, String Pname, String bamount, String bname, String price, String address)
+	public BuyedProduct(String uname,String storename, String Pname, String bamount, String bname, String price, String address)
 			throws Exception {
 		this.username = uname;
-		this.storeownername=storeownername;
+		this.storename=storename;
 		this.productname = Pname;
 		this.amount = bamount;
 		this.bname = bname;
@@ -29,121 +28,39 @@ public class BuyedProduct {
 		BuyedProductDatabase = FileUsage.buyed_productReadFromFile(BuyedProductDatabase);
 	}
 
-	public void buyproduct(String uname, String storeownername ,String pname, String bamount, String bname, String pprice,
+	public void buyproduct(String uname, String storename ,String pname, String bamount, String bname, String pprice,
 		String shippingaddress) throws Exception {
-		boolean FoundinSystem2 = false;
-		boolean FoundinSystem3 = false;
-		boolean FoundinSystem4 = false;
-		boolean FoundinSystem5 = false;
-		boolean Found = false;
-		Integer num1 = 0;
-		Integer num2 = 0;
-		Integer num3 = 0;
-		String remain;
-		for (int i = 0; i < new ProductOfStoreowner().ProductOfStoreownerDatabase.size(); i++) {
-			num1 = Integer.valueOf(bamount);
-			num2 = Integer.valueOf(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getProductQuantity());
-			if (num1 <= num2) {
-				FoundinSystem3 = true;
-			}
+		boolean FoundingStoreowner;
+		boolean AmountValid;
+		boolean ProductIsValid;
+		boolean FoundingUser;
+		AmountValid=new check_product_validation().Is_Amount_Valid(bamount);
+		FoundingUser=new Check_user_account().check_user_account(uname);
+		FoundingStoreowner=new Check_user_account().check_storeowner_account(uname,storename);
+		ProductIsValid=new check_product_validation().Is_Product_Valid(storename,bname,pname,pprice);
+		if (FoundingUser== false && FoundingStoreowner==false) {
+			System.out.println("The  accout name  is wrong");
 		}
-		
-		for (int i = 0; i < 1000000; i++) {
-			if (uname.equals(new systemUser().userDatabase.get(i).getUsername())) {
-				FoundinSystem2 = true;
-				break;
-			} else if (uname.equals(new systemUser().StoreODatabase.get(i).getUsername()) && 
-					storeownername !=(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getStoreOwnerName())) {
-				FoundinSystem5 = true;
-				break;
-			}
-		}
-
-		for (int i = 0; i < new ProductOfStoreowner().ProductOfStoreownerDatabase.size(); i++) {
-			if (storeownername.equals(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getStoreOwnerName()) &&
-					pname.equals(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getName())  
-					&& bname.equals(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getBrandName())
-					&& pprice.equals(new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i).getPrice())) {
-				FoundinSystem4 = true;
-			}
-		}
-		if (FoundinSystem2 == false) {
-			System.out.println("The user accout name  is not available");
-		}
-		if (FoundinSystem5 == false) {
-			System.out.println("The store owner accout name is not available");
-		}
-		if (FoundinSystem3 == false) {
+		if (AmountValid == false) {
 			System.out.println("The amount is not available");
 		}
-		if (FoundinSystem4 == false) {
-			System.out.println("The product or band is not available");
+		if (ProductIsValid == false) {
+			System.out.println("You have entered something wrong the storeowner account or the product or the brand ");
 		}
-		if (FoundinSystem3 == true && FoundinSystem4 == true && (FoundinSystem2 == true || FoundinSystem5 == true)) {
-			for (int i = 0; i < BuyedProductDatabase.size(); i++) { // user already exists
-				if (uname.equals(BuyedProductDatabase.get(i).getUserName())) {
-					Found = true;
-				}
+		if (AmountValid == true && ProductIsValid == true &&
+				  (FoundingUser == true || FoundingStoreowner==true)) {
+		
+            boolean Found=new Discount().User_already_exist(uname);
+			if (FoundingStoreowner == true) { // store owner case
+				new Discount().User_Is_Storeowner(uname, pprice, bamount);
 			}
-
-			if (FoundinSystem5 == true) { // store owner case
-				if (num1 != 2 && Found == true) { // law store owner we bas
-					System.out.println("the price of bought product is  15% off");
-					double s1;
-					Integer price1 = Integer.valueOf(pprice);
-					s1 = price1 - (0.15 * Double.valueOf(pprice));
-					pprice = (Double.toString(s1));
-				} else if (num1 == 2 && Found == true) { // law store owner and buy 2 items
-					System.out.println("the price of bought product is  25% off");
-					double s2;
-					Integer price2 = Integer.valueOf(pprice);
-					s2 = price2 - (0.25 * Double.valueOf(pprice));
-					pprice = (Double.toString(s2));
-				} else if (Found == false && num1 != 2) { // law store owner we buy first time
-					System.out.println("the price of bought product is  20% off");
-					double s3;
-					Integer price3 = Integer.valueOf(pprice);
-					s3 = price3 - (0.20 * Double.valueOf(pprice));
-					pprice = (Double.toString(s3));
-				} else if (Found == false && num1 == 2) { // law store owner we buy first time we buy 2 items
-					System.out.println("the price of bought product is  30% off");
-					double s3;
-					Integer price3 = Integer.valueOf(pprice);
-					s3 = price3 - (0.30 * Double.valueOf(pprice));
-					pprice = (Double.toString(s3));
-				}
-			
-
-			}
-			if (FoundinSystem2 == true) { // law user
-				if (num1 == 2 && Found == true) { // law buy 2 items
-					System.out.println("the price of bought product if user buy 2 items of it will be 10% off");
-					double s;
-					Integer price = Integer.valueOf(pprice);
-					s = price - (0.10 * Double.valueOf(pprice));
-					pprice = (Double.toString(s));
-				} else if (Found == false && num1 != 2) { // law buy first time
-					System.out.println(
-							"the price of bought product if it is the first time for user to buy product 5% off");
-					// pprice=0.05*Integer.parseInt(pprice);
-					double s;
-					Integer price = Integer.valueOf(pprice);
-					s = price - (0.05 * Double.valueOf(pprice));
-					pprice = Double.toString(s);
-					// return;
-				} else if (num1 == 2 && Found == false) { // law buy 2 items first time
-					System.out.println("the price of bought product 15% off");
-					double s;
-					Integer price = Integer.valueOf(pprice);
-					s = price - (0.15 * Double.valueOf(pprice));
-					pprice = (Double.toString(s));
-					// return;
-				}
+			if (FoundingUser == true) { // law user
+				new Discount().User_Is_User(uname, bamount, pprice);
 			}
 			if (Found == true) { // law is not the first time
-				System.out.println("You previously have bought a product ");
+				System.out.println("You previously have bought a product, You have miss our 5% discount first order!");
 			}
-			FileUsage.usingBufferedWritter(uname + "|" + storeownername  + "|" + pname + "|" + bamount + "|" + bname + "|" + pprice + "|" + shippingaddress,
+			FileUsage.usingBufferedWritter(uname + "|" + storename  + "|" + pname + "|" + bamount + "|" + bname + "|" + pprice + "|" + shippingaddress,
 					"BuyedProduct.txt");
 			new numberOfBoughtProducts().numberof_addedProducts();
 			System.out.println("Product is added to card");
@@ -151,4 +68,3 @@ public class BuyedProduct {
 	}
 
 }
-

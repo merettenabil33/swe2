@@ -24,3 +24,6 @@
 /numberOfBoughtProducts.class
 /product.class
 /systemUser.class
+/check_product_validation.class
+/Check_user_account.class
+/Discount.class
