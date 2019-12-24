@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class BuyedProduct {
 	private String username;
 	private String storeownername;

@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Main {
 
 	@SuppressWarnings({ "unused", "resource" })
@@ -11,6 +10,7 @@ public class Main {
 		Collaborator c = new Collaborator();
 		product p = new product();
 		boolean storewant = false;
+		boolean addProductWant = false;
 		Scanner userInput = new Scanner(System.in);
 		while (true) {
 			System.out.println("For register enter 1: ");
@@ -46,9 +46,12 @@ public class Main {
 				}
 				if (want2 == 1) {
 					u.login(1);
+					
+					while (true) {
 					System.out.println("To return to home page Enter 0: ");
 					System.out.println("To view products  Enter 1: ");
 					System.out.println("To buy a product  Enter 2: ");
+					System.out.println("To log out enter 3: ");
 					int userwant = userInput.nextInt();
 					if (userwant == 0) {
 						System.out.println("   To the Home Page   ");
@@ -59,7 +62,9 @@ public class Main {
 					if (userwant == 2) {
 						u.userbuyproduct();
 					}
-
+					if (userwant == 3)
+						break;
+					}
 				} else if (want2 == 2) {
 					s.login(2);
 					if (storewant == true) {
@@ -70,7 +75,7 @@ public class Main {
 							System.out.println("Adminstrator refuses to add new store");
 						}
 					}
-
+					while(true) {
 					System.out.println("To return to home page Enter 0: ");
 					System.out.println("To Add new store Enter 1: ");
 					System.out.println("To Add new product to store Enter 2: ");
@@ -78,6 +83,7 @@ public class Main {
 					System.out.println("To Add new Collaborator Enter 4: ");
 					System.out.println("To buy a product Enter 5: ");
 					System.out.println("To view History Enter 6: ");
+					System.out.println("To log out enter 7: ");
 					int want3 = userInput.nextInt();
 					if (want3 == 0) {
 						System.out.println("   To the Home Page   ");
@@ -101,6 +107,9 @@ public class Main {
 					if (want3 == 6) {
 						s.history();
 					}
+					if (want3 == 7)
+						break;
+					}
 
 				} else if (want2 == 3) {
 					a.login(3);
@@ -111,6 +120,7 @@ public class Main {
 					System.out.println("To Add new product Enter 1: ");
 					System.out.println("To Add new brand Enter 2: ");
 					System.out.println("To see new statistics Enter 3:");
+					System.out.println("To log out enter 4: ");
 					int want4 = userInput.nextInt();
 					if (want4 == 0) {
 						System.out.println("   To the Home Page   ");
@@ -124,18 +134,36 @@ public class Main {
 					if (want4 == 3) {
 						a.addnewstatistics();
 					}
+					if (want4 == 4)
+						break;
 
 				} else if (want2 == 4) {
 					c.CollaboratoerLogin();
-					System.out.println("To Add Product Enter 1: ");
-					int collaboratorWant = userInput.nextInt();
-					if (collaboratorWant == 1) {
-						c.useAsStoreOwner();
-					}
-
+						if (addProductWant == true) {
+							if (s.checkx == true) {
+								System.out.println("Store Owner Accepts Enterd Data");
+							    c.useAsStoreOwner(1);
+							} else if (s.checkx == false) {
+								System.out.println("Sorry! StoreOwner Declined your changes...");
+							}
+							}
+						while(true) {
+							System.out.println("To Add Product Enter 1: ");
+							System.out.println("To log out enter 2: ");
+							int collaboratorWant=userInput.nextInt();
+							if(collaboratorWant==1)
+							{
+								addProductWant = true;
+								c.useAsStoreOwner(0);
+							}
+							if(collaboratorWant==2)
+							{
+								break;
+							}
 				}
-			}
+					
+				}
 		}
 	}
 }
-
+}

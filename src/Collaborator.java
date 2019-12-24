@@ -1,7 +1,11 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Collaborator {
-	StoreOwner sO = new StoreOwner();
+	StoreOwner sO= new StoreOwner();
 	StoreOwnerAddProducts add = new StoreOwner();
 	systemUser s = new systemUser();
 
@@ -10,61 +14,53 @@ public class Collaborator {
 	}
 
 	@SuppressWarnings("resource")
-	public void useAsStoreOwner() throws Exception {
-
+	public void useAsStoreOwner(int x) throws Exception {
+		if(x==0) {
 		Scanner userInput3 = new Scanner(System.in);
-		System.out.println("name of Storeowner is:");
+		System.out.println("Your userName is :");
+		String collaboratorName = userInput3.nextLine();
+		System.out.println("Name of Storeowner is:");
 		String StoreOwnerName = userInput3.nextLine();
-		System.out.println("name of products is:");
+		System.out.println("Name of products is:");
 		String Pname = userInput3.nextLine();
-		System.out.println("category of products is:");
+		System.out.println("Category of products is:");
 		String Pcategory = userInput3.nextLine();
-		System.out.println("price of products is:");
+		System.out.println("Price of products is:");
 		String Pprice = userInput3.nextLine();
-		System.out.println("name of brand is:");
+		System.out.println("Name of brand is:");
 		String Brandname = userInput3.nextLine();
-		System.out.println("category of brand is:");
+		System.out.println("Category of brand is:");
 		String Brandcategory = userInput3.nextLine();
 		System.out.println("Quantity of products is:");
 		String Pproductquantity = userInput3.nextLine();
-
-		FileUsage.usingBufferedWritter(StoreOwnerName + "|" + Pname + "|" + Pcategory + "|" + Pprice + "|" + Brandname
-				+ "|" + Brandcategory + "|" + Pproductquantity, "History.txt");
-
+	
+		FileUsage.usingBufferedWritter(collaboratorName + "|" +StoreOwnerName +"|" + Pname+"|" + Pcategory + "|" + Pprice + "|" + Brandname +"|" +
+		Brandcategory +"|" + Pproductquantity, "History.txt");
+		
 		System.out.println("Changes Sent to the Store Owner...");
+		
+		}
+	else if(x==1)
+	   {
+		FileReader fr = new FileReader("History.txt");
+		BufferedReader br = new BufferedReader(fr);
+		FileWriter fw = new FileWriter("ProductsOfStoreOwner.txt", true);
+		String s;
+		
+		while ((s = br.readLine()) != null) { // read a line
+			fw.write(s); // write to output file
+			fw.flush();
+		
+		PrintWriter writer = new PrintWriter("History.txt");
+		writer.print("");
+		writer.close();
 	}
-
-	public void checkChanges(int check) throws Exception {
-		if (check == 1) {
-			System.out.println("StoreOwner Accepted Adding..");
-			System.out.println("Please re-enter data:");
-			Scanner userInput3 = new Scanner(System.in);
-			System.out.println("name of Storeowner is:");
-			String StoreOwnerName = userInput3.nextLine();
-			System.out.println("name of products is:");
-			String Pname = userInput3.nextLine();
-			System.out.println("category of products is:");
-			String Pcategory = userInput3.nextLine();
-			System.out.println("price of products is:");
-			String Pprice = userInput3.nextLine();
-			System.out.println("name of brand is:");
-			String Brandname = userInput3.nextLine();
-			System.out.println("category of brand is:");
-			String Brandcategory = userInput3.nextLine();
-			System.out.println("Quantity of products is:");
-			String Pproductquantity = userInput3.nextLine();
-
-			FileUsage.usingBufferedWritter(StoreOwnerName + "|" + Pname + "|" + Pcategory + "|" + Pprice + "|"
-					+ Brandname + "|" + Brandcategory + "|" + Pproductquantity, "ProductsOfStoreOwner.txt");
-
-		} else if (check == 3)
-			System.out.println("Sorry! StoreOwner Declined your changes...");
+		}
 	}
-
+	
 	public void CollaboratoerLogin() throws Exception {
 
 		s.login(4);
 	}
 
 }
-

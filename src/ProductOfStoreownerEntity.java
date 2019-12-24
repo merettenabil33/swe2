@@ -7,9 +7,8 @@ public class ProductOfStoreownerEntity {
 	private String productquantity;
 	private String brandname;
 	private String brandcategory;
-
-	public ProductOfStoreownerEntity(String storeOwnerName, String name, String category,
-			String price, String brandname, String brandcategory, String pproductquantity) {
+	
+	public ProductOfStoreownerEntity(String storeOwnerName,String name, String category, String price ,String brandname,String brandcategory,String pproductquantity ) {
 		this.storeOwnerName = storeOwnerName;
 		this.name = name;
 		this.category = category;
@@ -18,7 +17,7 @@ public class ProductOfStoreownerEntity {
 		this.brandname = brandname;
 		this.brandcategory = brandcategory;
 	}
-
+	
 	public String getStoreOwnerName() {
 		return storeOwnerName;
 	}
@@ -33,46 +32,35 @@ public class ProductOfStoreownerEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public String getProductQuantity() {
 		return productquantity;
 	}
-
 	public void setProductQuantity(String pproductquantity) {
-		this.productquantity = pproductquantity;
+		this.productquantity=pproductquantity;
 	}
-
 	public String getCategory() {
 		return category;
 	}
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
 	public String getPrice() {
 		return price;
 	}
-
 	public void setPrice(String price) {
 		this.price = price;
 	}
-
 	public String getBrandName() {
 		return brandname;
 	}
-
 	public void setBrandName(String brandname) {
 		this.brandname = brandname;
 	}
-
 	public String getBrandCategory() {
 		return brandcategory;
 	}
-
 	public void setBrandCategory(String brandcategory) {
 		this.brandcategory = brandcategory;
 	}
-
+	
 }
-

@@ -1,12 +1,12 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StoreOwner extends systemUser implements StoreOwnerAddColloborators, StoreOwnerAddProducts, StoreOwnerAddStores, StoreOwnerBuyProducts {
+public class StoreOwner extends systemUser implements StoreOwnerAddColloborators ,StoreOwnerAddProducts,StoreOwnerAddStores,StoreOwnerBuyProducts {
 	systemUser s = new systemUser();
-	ArrayList<ProductOfStoreownerEntity> historyDatabase = new ArrayList<ProductOfStoreownerEntity>();
 
 	public StoreOwner() throws Exception {
 		super();
@@ -19,10 +19,6 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		Scanner userInput2 = new Scanner(System.in);
 		System.out.println("Name of store is:");
 		String sname = userInput2.nextLine();
-		System.out.println("Type of store is:");
-		String stype = userInput2.nextLine();
-		System.out.println("location of store is:");
-		String slocation = userInput2.nextLine();
 		System.out.println("Wait for the admin to accept this may take time");
 	}
 
@@ -43,24 +39,26 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 	@SuppressWarnings({ "resource" })
 	public void addproducttostoreowner() throws Exception {
 		Scanner userInput3 = new Scanner(System.in);
+
 		System.out.println("Name of Store owner is:");
 		String storeOwnerName = userInput3.nextLine();
-		System.out.println("Name of product is:");
+		System.out.println("Name of products is:");
 		String Pname = userInput3.nextLine();
-		System.out.println("Category of product is:");
+		System.out.println("Category of products is:");
 		String Pcategory = userInput3.nextLine();
-		System.out.println("Price of product is:");
+		System.out.println("Price of products is:");
 		String Pprice = userInput3.nextLine();
 		System.out.println("Name of brand is:");
 		String Brandname = userInput3.nextLine();
 		System.out.println("Category of brand is:");
 		String Brandcategory = userInput3.nextLine();
-		System.out.println("Quantity of product is:");
+		System.out.println("Quantity of products is:");
 		String Pproductquantity = userInput3.nextLine();
-		new ProductOfStoreowner().addstoreproductinfo(storeOwnerName, Pname, Pcategory, Pprice,
-				Brandname, Brandcategory, Pproductquantity);
+		new ProductOfStoreowner().addstoreproductinfo(storeOwnerName, Pname, Pcategory, Pprice, Brandname,
+				Brandcategory, Pproductquantity);
 	}
 
+	@SuppressWarnings("resource")
 	public void wantToAddCollaborator() throws Exception {
 		Scanner input = new Scanner(System.in);
 		System.out.println("What is your Username? ");
@@ -76,11 +74,12 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		FileUsage.usingBufferedWritter(storeOwnerName + "|" + collaboratorName + "|" + password, "Collaborator.txt");
 	}
 
+	@SuppressWarnings("resource")
 	public void storeownerbuyproduct() throws Exception {
 		Scanner userInput3 = new Scanner(System.in);
 		System.out.println("Your username is:");
 		String Uname = userInput3.nextLine();
-		System.out.println("Store owner account's name is:");
+		System.out.println("Store's name is:");
 		String Sname = userInput3.nextLine();
 		System.out.println("name of product is:");
 		String Pname = userInput3.nextLine();
@@ -95,29 +94,11 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		new BuyedProduct().buyproduct(Uname, Sname, Pname, bamount, bname, pprice, shippingaddress);
 
 	}
-
-	@SuppressWarnings({ "resource", "unused" })
-	public int collaboratorEdits() throws Exception {
-		Collaborator c = new Collaborator();
-		Scanner userInput = new Scanner(System.in);
-		int check = 0;
-		System.out.println("Please Choose what to do with added data? ");
-		System.out.println("To Add changes enter 1: ");
-		System.out.println("To Edit changes enter 2: ");
-		System.out.println("To Remove changes enter 3: ");
-		int approve = userInput.nextInt();
-		if (approve == 1) {
-			check = 1;
-			c.checkChanges(1);
-		} else if (approve == 2) {
-			System.out.println("Enter the new data: ");
-			addproducttostoreowner();
-		} else
-			c.checkChanges(3);
-		return 0;
-	}
-
-	public void history() throws Exception {
+	
+	@SuppressWarnings("resource")
+	public void history() throws Exception
+	{
+		 ArrayList<ProductOfStoreownerEntity> historyDatabase = new ArrayList<ProductOfStoreownerEntity>();
 		BufferedReader reader3 = new BufferedReader(new FileReader(new File("History.txt")));
 		String line3;
 		while ((line3 = reader3.readLine()) != null) {
@@ -133,17 +114,45 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		String line4 = br1.readLine();
 		while (line4 != null) {
 			String[] arr = line4.split("\\|");
-			System.out.println("Store Owner Name is: " + arr[0]);
-			System.out.println("Product Name is: " + arr[1]);
-			System.out.println("Product Category is: " + arr[2]);
-			System.out.println("Product Price is: " + arr[3]);
-			System.out.println("Brand Name is: " + arr[4]);
-			System.out.println("Brand Category is: " + arr[5]);
-			System.out.println("Product Quantity is: " + arr[6]);
+			
+			System.out.println("Collaborator Name is: " + arr[0]);
+			System.out.println("Product Name is: " + arr[2]);
+			System.out.println("Product Category is: " + arr[3]);
+			System.out.println("Product Price is: " + arr[4]);
+			System.out.println("Brand Name is: " + arr[5]);
+			System.out.println("Brand Category is: " + arr[6]);
 			line4 = br1.readLine();
 		}
 		collaboratorEdits();
 	}
+	boolean checkx = true;
+	@SuppressWarnings({ "resource", "unused" })
+	public boolean collaboratorEdits() throws Exception
+	{
+		Collaborator c= new Collaborator();
+		Scanner userInput = new Scanner(System.in);
+		int check =0;
+		System.out.println("Please Choose what to do with added data? ");
+		System.out.println("To Add changes enter 1: ");
+		System.out.println("To Edit changes enter 2: ");
+		System.out.println("To Remove changes enter 3: ");
+		int approve = userInput.nextInt();
+		if(approve==1)
+		{
+			return checkx;
+		}
+		else if (approve==2)
+		{
+			System.out.println("Enter the new data: ");
+		    addproducttostoreowner();
+		}
+		if (approve==3) {
+			checkx = false;
+			 PrintWriter writer = new PrintWriter("History.txt");
+			   writer.print("");
+			   writer.close();
+		}
+		    return checkx;
+		  
+	}
 }
-
-

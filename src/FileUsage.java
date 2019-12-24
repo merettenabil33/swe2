@@ -28,15 +28,16 @@ public class FileUsage {
 	   
 	   
 	   @SuppressWarnings("resource")
-		public static ArrayList<BrandEntity>brandRreadFromFile(ArrayList<BrandEntity> Brands) throws Exception{
-				BufferedReader reader = new BufferedReader(new FileReader(new File("Brands.txt")));
-				String line;
-				while((line = reader.readLine()) != null) {
-					String[] arr = line.split("\\|");
-					Brands.add(new BrandEntity(arr[0], arr[1]));
-				}
-				return Brands;
+	public static ArrayList<BrandEntity>brandRreadFromFile(ArrayList<BrandEntity> Brands) throws Exception{
+			BufferedReader reader = new BufferedReader(new FileReader(new File("Brands.txt")));
+			String line;
+			while((line = reader.readLine()) != null) {
+				String[] arr = line.split("\\|");
+				Brands.add(new BrandEntity(arr[0], arr[1]));
 			}
+			return Brands;
+		}
+
 	   @SuppressWarnings("resource")
 	public static ArrayList<ProductEntity> productReadFromFile(ArrayList<ProductEntity> products) throws Exception {
 		   	BufferedReader reader = new BufferedReader(new FileReader(new File("Products.txt")));
@@ -49,7 +50,7 @@ public class FileUsage {
 		   }
 	   
 	   @SuppressWarnings("resource")
-	   public static ArrayList<ProductOfStoreownerEntity> product_sOwnerReadFromFile(ArrayList<ProductOfStoreownerEntity> productstore,String FileName) throws Exception{
+	public static ArrayList<ProductOfStoreownerEntity> product_sOwnerReadFromFile(ArrayList<ProductOfStoreownerEntity> productstore,String FileName) throws Exception{
 			BufferedReader reader = new BufferedReader(new FileReader(new File(FileName)));
 			String line;
 			while((line = reader.readLine()) != null) {
@@ -57,7 +58,7 @@ public class FileUsage {
 				productstore.add(new ProductOfStoreownerEntity(arr[0], arr[1], arr[2], arr[3], arr[4],arr[5],arr[6]));
 			}
 			return productstore;
-	   }
+		}
 		   
 	   @SuppressWarnings("resource")
 	public static ArrayList<StoreEntity> storeReadFromFile(ArrayList<StoreEntity> store) throws Exception{
@@ -83,4 +84,3 @@ public class FileUsage {
 	
 	   
 }
-
