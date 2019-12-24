@@ -32,7 +32,7 @@ public class Store {
 		}
 		for (int i = 0; i < StoreDatabase.size(); ++i) {
 			if (StoreDatabase.get(i).getname().equals(storename)) {
-				System.out.print("this store is already found ");
+				System.out.print("This store is already found! ");
 				FoundinSystem2 = true;
 				return;
 			}

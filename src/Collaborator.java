@@ -19,8 +19,10 @@ public class Collaborator {
 		Scanner userInput3 = new Scanner(System.in);
 		System.out.println("Your userName is :");
 		String collaboratorName = userInput3.nextLine();
-		System.out.println("Name of Storeowner is:");
+		System.out.println("Storeowner account is:");
 		String StoreOwnerName = userInput3.nextLine();
+		System.out.println("Name of Store is:");
+		String StoreName = userInput3.nextLine();
 		System.out.println("Name of products is:");
 		String Pname = userInput3.nextLine();
 		System.out.println("Category of products is:");
@@ -34,7 +36,7 @@ public class Collaborator {
 		System.out.println("Quantity of products is:");
 		String Pproductquantity = userInput3.nextLine();
 	
-		FileUsage.usingBufferedWritter(collaboratorName + "|" +StoreOwnerName +"|" + Pname+"|" + Pcategory + "|" + Pprice + "|" + Brandname +"|" +
+		FileUsage.usingBufferedWritter(collaboratorName + "|" +StoreOwnerName + "|" +StoreName +"|" + Pname+"|" + Pcategory + "|" + Pprice + "|" + Brandname +"|" +
 		Brandcategory +"|" + Pproductquantity, "History.txt");
 		
 		System.out.println("Changes Sent to the Store Owner...");

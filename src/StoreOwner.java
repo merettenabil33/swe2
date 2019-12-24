@@ -40,8 +40,10 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 	public void addproducttostoreowner() throws Exception {
 		Scanner userInput3 = new Scanner(System.in);
 
-		System.out.println("Name of Store owner is:");
+		System.out.println("Store owner  account is:");
 		String storeOwnerName = userInput3.nextLine();
+		System.out.println("Store name is:");
+		String storeName = userInput3.nextLine();
 		System.out.println("Name of products is:");
 		String Pname = userInput3.nextLine();
 		System.out.println("Category of products is:");
@@ -54,7 +56,7 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		String Brandcategory = userInput3.nextLine();
 		System.out.println("Quantity of products is:");
 		String Pproductquantity = userInput3.nextLine();
-		new ProductOfStoreowner().addstoreproductinfo(storeOwnerName, Pname, Pcategory, Pprice, Brandname,
+		new ProductOfStoreowner().addstoreproductinfo(storeOwnerName,storeName, Pname, Pcategory, Pprice, Brandname,
 				Brandcategory, Pproductquantity);
 	}
 
@@ -103,7 +105,7 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		String line3;
 		while ((line3 = reader3.readLine()) != null) {
 			String[] arr = line3.split("\\|");
-			historyDatabase.add(new ProductOfStoreownerEntity(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]));
+			historyDatabase.add(new ProductOfStoreownerEntity(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6],arr[7]));
 		}
 		int i;
 		for (i = 0; i < historyDatabase.size(); ++i) {

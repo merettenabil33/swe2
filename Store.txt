@@ -1,5 +1,6 @@
-laylaStore|nada_hatem|clothes|Dokki
+laylaStore|nada_hatem|cosmetics|Dokki
 maha|nada_hatem|clothes|Haram
-sahar|alaa_el_lol|makeup|Dokki
 premoda|nada_hatem|clothes|Haram
-
+Raya|alaa_el_lol|electronices|Dokki
+NadaStroe|nada_hatem|electronices|Haram
+Ba2al|alaa_el_lol|cosmetics|Giza
