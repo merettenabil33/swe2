@@ -2,6 +2,9 @@ youmnaMohamed|laylaStore|Shampo|1|Clear|190|Haram
 nesma_thabet|laylaStore|Shampo|2|Loreal|170.0|Haram
 alaa_el_lol|laylaStore|Shampo|2|Loreal|140.0|October
 nesma_thabet|Raya|mobile|3|lenovo|6000|Giza
-nesma_thabet|NadaStore|mobile|2|iphone|6000|Haram
-alaa_el_lol|NadaStore|mobile|2|iphone|6000|Dokki
-alaa_el_lol|laylaStore|Shampo|2|Pantene|200|Fesial
+nesma_thabet|NadaStore|mobile|1|iphone|6000|Haram
+alaa_el_lol|NadaStore|mobile|1|iphone|6000|Dokki
+alaa_el_lol|laylaStore|Shampo|1|Pantene|200|Fesial
+nesma_thabet|NadaStore|mobile|2|iphone|5400.0|Haram
+nesma_thabet|Raya|mobile|2|lenovo|5400.0|Haram
+nada_hatem|Raya|mobile|2|iphone|4200.0|Giza
