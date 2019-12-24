@@ -14,8 +14,8 @@ public class ProductOfStoreowner {
 
 	ArrayList<ProductOfStoreownerEntity> ProductOfStoreownerDatabase = new ArrayList<ProductOfStoreownerEntity>();
 
-	public ProductOfStoreowner(String storeOwnerName,String storename, String Pname, String Pcategory, String Pprice, String bname,
-			String bcategory, String productquantity) throws Exception {
+	public ProductOfStoreowner(String storeOwnerName, String storename, String Pname, String Pcategory, String Pprice,
+			String bname, String bcategory, String productquantity) throws Exception {
 
 		this.storeOwnerName = storeOwnerName;
 		this.storename = storename;
@@ -26,44 +26,27 @@ public class ProductOfStoreowner {
 		this.brandname = bname;
 		this.brandcategory = bcategory;
 
-		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,"ProductsOfStoreOwner.txt");
-		
+		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+				"ProductsOfStoreOwner.txt");
+
 	}
 
 	public ProductOfStoreowner() throws Exception {
 
-		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,"ProductsOfStoreOwner.txt");
-		
+		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+				"ProductsOfStoreOwner.txt");
+
 	}
 
-	public void addstoreproductinfo(String storeOwnerName,String storename, String pname, String pcategory, String pprice, String bname,
-			String bcategory, String pproductquantity) throws Exception {
+	public void addstoreproductinfo(String storeOwnerName, String storename, String pname, String pcategory,
+			String pprice, String bname, String bcategory, String pproductquantity) throws Exception {
 
 		boolean FoundProduct = false;
 		boolean FoundBrand = false;
 		boolean FoundStore = false;
-		for (int i = 0; i < new product().prodctDatabase.size(); ++i) {
-			if ((pname.equals(new product().prodctDatabase.get(i).getName()))
-					&& (pcategory.equals(new product().prodctDatabase.get(i).getCategory()))
-					&& (pprice.equals(new product().prodctDatabase.get(i).getPrice()))) {
-				FoundProduct = true;
-
-			}
-		}
-		for (int j = 0; j < new Brand().BrandDatabase.size(); j++) {
-			if ((bname.equals(new Brand().BrandDatabase.get(j).getBrandName()))
-					&& (bcategory.equals(new Brand().BrandDatabase.get(j).getBrandCategory()))) {
-				FoundBrand = true;
-
-			}
-		}
-		for (int j = 0; j < new Store().StoreDatabase.size(); j++) {
-			if ((storeOwnerName.equals(new Store().StoreDatabase.get(j).getAccountname()))
-					&& (storename.equals(new Store().StoreDatabase.get(j).getname()))) {
-				FoundStore = true;
-
-			}
-		}
+		FoundProduct = new Control_Adding_ProductsOfStoreOwner().check_product_in_system(pname, pcategory, pprice);
+		FoundBrand = new Control_Adding_ProductsOfStoreOwner().check_brand_in_system(bname, bcategory);
+		FoundStore = new Control_Adding_ProductsOfStoreOwner().check_store(storeOwnerName, storename);
 		if (FoundProduct == false || FoundBrand == false) {
 			System.out.println("The Product or Brand is not found in system");
 			return;
@@ -74,16 +57,16 @@ public class ProductOfStoreowner {
 		}
 		if (FoundBrand == true & FoundProduct == true & FoundStore == true) {
 			for (int i = 0; i < ProductOfStoreownerDatabase.size(); ++i) {
-				if (ProductOfStoreownerDatabase.get(i).getName().equals(pname) &&
-						ProductOfStoreownerDatabase.get(i).getStoreName().equals(storename) &&
-						ProductOfStoreownerDatabase.get(i).getStoreOwnerName().equals(storeOwnerName) &&
-						ProductOfStoreownerDatabase.get(i).getBrandName().equals(bname) && bcategory == pcategory) {
+				if (ProductOfStoreownerDatabase.get(i).getName().equals(pname)
+						&& ProductOfStoreownerDatabase.get(i).getStoreName().equals(storename)
+						&& ProductOfStoreownerDatabase.get(i).getStoreOwnerName().equals(storeOwnerName)
+						&& ProductOfStoreownerDatabase.get(i).getBrandName().equals(bname) && bcategory == pcategory) {
 					System.out.print("this product is already added with this brand  \n");
 					return;
 				}
 			}
-			FileUsage.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|" + pprice + "|" + bname
-					+ "|" + bcategory + "|" + pproductquantity, "ProductsOfStoreowner.txt");
+			FileUsage.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|"
+					+ pprice + "|" + bname + "|" + bcategory + "|" + pproductquantity, "ProductsOfStoreowner.txt");
 			System.out.println("Product is added to store with a brand");
 		}
 	}
