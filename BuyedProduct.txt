@@ -8,3 +8,5 @@ alaa_el_lol|laylaStore|Shampo|1|Pantene|200|Fesial
 nesma_thabet|NadaStore|mobile|2|iphone|5400.0|Haram
 nesma_thabet|Raya|mobile|2|lenovo|5400.0|Haram
 nada_hatem|Raya|mobile|2|iphone|4200.0|Giza
+nesma_thabet|Raya|mobile|4|lenovo|6000|Monofya
+nesma_thabet|Raya|mobile|2|iphone|5400.0|Haram

@@ -1,3 +1,4 @@
+/Admin.class
 /Adminstrator.class
 /Brand.class
 /BrandEntity.class
@@ -21,6 +22,8 @@
 /StoreOwnerAddProducts.class
 /StoreOwnerAddStores.class
 /StoreOwnerBuyProducts.class
+/SystemUserLogin.class
+/SystemUserRegister.class
 /User.class
 /UserEntity.class
 /UserWantsViewProduct.class
@@ -28,7 +31,10 @@
 /numberOfBoughtProducts.class
 /product.class
 /systemUser.class
-/Admin.class
-/SystemUserLogin.class
-/SystemUserRegister.class
 /userboughtproduct.class
+/View.class
+/User_View.class
+/Storeowner_View.class
+/Admin_View.class
+/Collaborator_View.class
+/check_user_input.class

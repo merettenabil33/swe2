@@ -1,4 +1,4 @@
-public class Check_user_account {
+public class check_user_input {
 	public boolean FoundingUser;
 	public boolean FoundingStoreowner;
     public boolean FoundingStore;
