@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StoreOwner extends systemUser implements StoreOwnerAddColloborators ,StoreOwnerAddProducts,StoreOwnerAddStores,StoreOwnerBuyProducts {
-	systemUser s = new systemUser();
+	
 
 	public StoreOwner() throws Exception {
 		super();

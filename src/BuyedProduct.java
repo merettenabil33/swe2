@@ -35,8 +35,6 @@ public class BuyedProduct {
 		boolean ProductIsValid;
 		boolean FoundingUser;
 		boolean FoundingStore;
-		Integer num1 = 0;
-		Integer num2 = 0;
 		AmountValid=new check_product_validation().Is_Amount_Valid(bamount);
 		FoundingStore=new Check_user_account().check_store(storename);
 		FoundingUser=new Check_user_account().check_user_account(uname);

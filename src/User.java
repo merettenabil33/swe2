@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class User extends systemUser {
+public class User extends systemUser implements userboughtproduct {
 
 	public User() throws Exception {
 		super();

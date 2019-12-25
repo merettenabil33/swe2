@@ -5,6 +5,7 @@
 /BuyedProductEntity.class
 /Check_user_account.class
 /Collaborator.class
+/Control_Adding_ProductsOfStoreOwner.class
 /Discount.class
 /FileUsage.class
 /Main.class
@@ -27,4 +28,7 @@
 /numberOfBoughtProducts.class
 /product.class
 /systemUser.class
-/Control_Adding_ProductsOfStoreOwner.class
+/Admin.class
+/SystemUserLogin.class
+/SystemUserRegister.class
+/userboughtproduct.class
