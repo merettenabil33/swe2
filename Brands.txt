@@ -7,3 +7,4 @@ Clear|haircare
 hp|electronices
 lenovo|electronices
 iphone|electronices
+casio|stationary

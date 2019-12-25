@@ -36,9 +36,9 @@ public class BuyedProduct {
 		boolean FoundingUser;
 		boolean FoundingStore;
 		AmountValid=new check_product_validation().Is_Amount_Valid(bamount);
-		FoundingStore=new Check_user_account().check_store(storename);
-		FoundingUser=new Check_user_account().check_user_account(uname);
-		FoundingStoreowner=new Check_user_account().check_storeowner_account(uname);
+		FoundingStore=new check_user_input().check_store(storename);
+		FoundingUser=new check_user_input().check_user_account(uname);
+		FoundingStoreowner=new check_user_input().check_storeowner_account(uname);
 		ProductIsValid=new check_product_validation().Is_Product_Valid(storename,bname,pname,pprice);
 		if (FoundingUser== false && FoundingStoreowner==false) {
 			System.out.println("The  accout name  is wrong");
@@ -60,7 +60,7 @@ public class BuyedProduct {
 				pprice=new Discount().User_Is_User(uname, bamount, pprice);
 			}
 			if (Found == true) { // law is not the first time
-				System.out.println("You previously have bought a product ");
+				System.out.println("You previously have bought a product, You miss our 5% off on first order!! ");
 			}
 			FileUsage.usingBufferedWritter(uname + "|" + storename  + "|" + pname + "|" + bamount + "|" + bname + "|" + pprice + "|" + shippingaddress,
 					"BuyedProduct.txt");
