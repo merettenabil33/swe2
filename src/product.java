@@ -22,7 +22,6 @@ public class product {
 		prodctDatabase = FileUsage.productReadFromFile(prodctDatabase);
 	}
 
-	int id = 0;
 
 	public void addproductinfo(String pname, String pcategory, String pprice, String poffer) throws IOException {
 		for (int i = 0; i < prodctDatabase.size(); ++i) {

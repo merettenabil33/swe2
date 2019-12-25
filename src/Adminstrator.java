@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -6,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Adminstrator extends systemUser {
+public class Adminstrator extends systemUser implements Admin {
 	public Adminstrator() throws Exception {
 		super();
 	}
@@ -31,8 +30,8 @@ public class Adminstrator extends systemUser {
 	public boolean AcceptStore() {
 		System.out.println("Do you want to add this store to storeOwner enter 1 if no enter 2");
 		Scanner request = new Scanner(System.in);
-		int what = request.nextInt();
-		if (what == 1) {
+		int admin_choice = request.nextInt();
+		if (admin_choice == 1) {
 			return check;
 		}
 		check = false;

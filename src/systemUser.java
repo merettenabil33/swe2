@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class systemUser {
+public class systemUser implements SystemUserLogin , SystemUserRegister {
 
 	public ArrayList<UserEntity> userDatabase = new ArrayList<UserEntity>();
 	private ArrayList<UserEntity> AdminDatabase = new ArrayList<UserEntity>();
