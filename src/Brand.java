@@ -2,8 +2,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import FileUsage.BrandEntity;
-import FileUsage.fileWrite;
-import FileUsage.brandsFileRead;
+import FileUsage.FileWrite;
+import FileUsage.BrandsFileRead;
 
 @SuppressWarnings("unused")
 public class Brand {
@@ -18,11 +18,11 @@ public class Brand {
    this.bcategory=Bcategory;
    
    
-   BrandDatabase = brandsFileRead.brandRreadFromFile(BrandDatabase);
+   BrandDatabase = BrandsFileRead.brandRreadFromFile(BrandDatabase);
 }
 public Brand() throws Exception {
 	
-	   BrandDatabase = brandsFileRead.brandRreadFromFile(BrandDatabase);
+	   BrandDatabase = BrandsFileRead.brandRreadFromFile(BrandDatabase);
 
 }
 
@@ -34,7 +34,7 @@ public void addBrandinfo( String Bname, String Bcategory) throws IOException {
 	   }
    }
    
-   fileWrite.usingBufferedWritter(Bname + "|" + Bcategory , "Brands.txt");
+   FileWrite.usingBufferedWritter(Bname + "|" + Bcategory , "Brands.txt");
    System.out.println("Brand is added");
 }
 

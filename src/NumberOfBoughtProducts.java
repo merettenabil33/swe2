@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class numberOfBoughtProducts {
-	public numberOfBoughtProducts() throws Exception {
+public class NumberOfBoughtProducts {
+	public NumberOfBoughtProducts() throws Exception {
         super();
     }
 	public void numberof_addedProducts() throws Exception {

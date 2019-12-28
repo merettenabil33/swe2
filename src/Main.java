@@ -7,7 +7,7 @@ public class Main {
 		User u = new User();
 		StoreOwner s = new StoreOwner();
 		Adminstrator a = new Adminstrator();
-		product p = new product();
+		Product p = new Product();
 		Scanner userInput = new Scanner(System.in);
 		while (true) {
 			System.out.println("For register enter 1: ");
@@ -42,15 +42,15 @@ public class Main {
 					System.out.println("   To the Home Page   ");
 				}
 				if (login_as == 1) {
-					new User_View().user_view();
+					new UserView().user_view();
 				} else if (login_as == 2) {
-					new Storeowner_View().storeowner_view();
+					new StoreownerView().storeowner_view();
 
 				} else if (login_as == 3) {
-					new Admin_View().adminstrator_view();
+					new AdminView().adminstrator_view();
 
 				} else if (login_as == 4) {
-					new Collaborator_View().collaborator_view();
+					new CollaboratorView().collaborator_view();
 
 				}
 			}

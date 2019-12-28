@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Storeowner_View {
+public class StoreownerView {
 	public static boolean storeowner_want_add_store = false;
 
 	@SuppressWarnings("resource")

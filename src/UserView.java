@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class User_View {
+public class UserView {
 	@SuppressWarnings("resource")
 	public void user_view() throws Exception {
 		User u = new User();

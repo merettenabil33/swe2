@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import FileUsage.UserEntity;
-import FileUsage.fileWrite;
-import FileUsage.usersFileRead;
+import FileUsage.FileWrite;
+import FileUsage.UsersFileRead;
 
-public class systemUser implements SystemUserLogin , SystemUserRegister {
+public class SystemUser implements SystemUserLogin , SystemUserRegister {
 
 	public ArrayList<UserEntity> userDatabase = new ArrayList<UserEntity>();
 	private ArrayList<UserEntity> AdminDatabase = new ArrayList<UserEntity>();
@@ -17,18 +17,18 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
     protected String password;
     protected String conf;
     
-    public systemUser(String name,String pass,String confirm) throws Exception {
+    public SystemUser(String name,String pass,String confirm) throws Exception {
     	   this.nameOremail=name;
     	   this.password=pass;
     	   this.conf=confirm;
     	   
     	}
-        public systemUser() throws Exception {
+        public SystemUser() throws Exception {
         	
-        	  userDatabase = usersFileRead.userReadFromFile(userDatabase,"UserAccounts.txt");
-         	  AdminDatabase = usersFileRead.userReadFromFile( AdminDatabase,"AdminAccounts.txt");
-          	  StoreODatabase =usersFileRead.userReadFromFile(StoreODatabase,"StoreOwnerAccounts.txt");
-              collaboratorDatabase =usersFileRead.userReadFromFile(collaboratorDatabase,"Collaborator.txt");
+        	  userDatabase = UsersFileRead.userReadFromFile(userDatabase,"UserAccounts.txt");
+         	  AdminDatabase = UsersFileRead.userReadFromFile( AdminDatabase,"AdminAccounts.txt");
+          	  StoreODatabase =UsersFileRead.userReadFromFile(StoreODatabase,"StoreOwnerAccounts.txt");
+              collaboratorDatabase =UsersFileRead.userReadFromFile(collaboratorDatabase,"Collaborator.txt");
        	  
 		}
         public void register(int x) throws Exception{
@@ -59,7 +59,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                 	  }
                   }
                   userDatabase.add(new UserEntity(nameOremail, password));
-                 fileWrite.usingBufferedWritter(nameOremail + "|" + password, "UserAccounts.txt");
+                 FileWrite.usingBufferedWritter(nameOremail + "|" + password, "UserAccounts.txt");
                   System.out.println("Register is done");
                   new NumberOfAddedAccounts().numberOf_addedUsersAccounts();
 
@@ -73,7 +73,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                     	  }
                       }
                       StoreODatabase.add(new UserEntity(nameOremail, password));
-                      fileWrite.usingBufferedWritter(nameOremail + "|" + password, "StoreOwnerAccounts.txt");
+                      FileWrite.usingBufferedWritter(nameOremail + "|" + password, "StoreOwnerAccounts.txt");
                       System.out.println("Register is done");
                       new NumberOfAddedAccounts().numberOf_addedStoreOwnerAccounts();
     			  }
@@ -86,7 +86,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                     	  }
                       }
                       AdminDatabase.add(new UserEntity(nameOremail, password));
-                      fileWrite.usingBufferedWritter(nameOremail + "|" + password, "AdminAccounts.txt");
+                      FileWrite.usingBufferedWritter(nameOremail + "|" + password, "AdminAccounts.txt");
                       System.out.println("Register is done");
     			  }
     		  }

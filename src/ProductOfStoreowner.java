@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 import FileUsage.ProductOfStoreownerEntity;
-import FileUsage.fileWrite;
-import FileUsage.productsOfStoreOwnerFileRead;
+import FileUsage.FileWrite;
+import FileUsage.ProductsOfStoreOwnerFileRead;
 @SuppressWarnings("unused")
 public class ProductOfStoreowner {
 
@@ -29,14 +29,14 @@ public class ProductOfStoreowner {
 		this.brandname = bname;
 		this.brandcategory = bcategory;
 
-		ProductOfStoreownerDatabase = productsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+		ProductOfStoreownerDatabase = ProductsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
 				"ProductsOfStoreOwner.txt");
 
 	}
 
 	public ProductOfStoreowner() throws Exception {
 
-		ProductOfStoreownerDatabase = productsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+		ProductOfStoreownerDatabase = ProductsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
 				"ProductsOfStoreOwner.txt");
 
 	}
@@ -47,9 +47,9 @@ public class ProductOfStoreowner {
 		boolean FoundProduct = false;
 		boolean FoundBrand = false;
 		boolean FoundStore = false;
-		FoundProduct = new Control_Adding_ProductsOfStoreOwner().check_product_in_system(pname, pcategory, pprice);
-		FoundBrand = new Control_Adding_ProductsOfStoreOwner().check_brand_in_system(bname, bcategory);
-		FoundStore = new Control_Adding_ProductsOfStoreOwner().check_store(storeOwnerName, storename);
+		FoundProduct = new ControlAddingProductsOfStoreOwner().check_product_in_system(pname, pcategory, pprice);
+		FoundBrand = new ControlAddingProductsOfStoreOwner().check_brand_in_system(bname, bcategory);
+		FoundStore = new ControlAddingProductsOfStoreOwner().check_store(storeOwnerName, storename);
 		if (FoundProduct == false || FoundBrand == false) {
 			System.out.println("The Product or Brand is not found in system");
 			return;
@@ -68,7 +68,7 @@ public class ProductOfStoreowner {
 					return;
 				}
 			}
-			fileWrite.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|"
+			FileWrite.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|"
 					+ pprice + "|" + bname + "|" + bcategory + "|" + pproductquantity, "ProductsOfStoreowner.txt");
 			System.out.println("Product is added to store with a brand");
 		}
