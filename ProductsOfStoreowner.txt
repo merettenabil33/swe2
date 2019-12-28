@@ -7,3 +7,6 @@ nada_hatem|NadaStore|laptop|electronices|200|lenovo|electronices|4
 nada_hatem|NadaStore|mobile|electronices|6000|iphone|electronices|5
 alaa_el_lol|Raya|mobile|electronices|6000|lenovo|electronices|4
 alaa_el_lol|Raya|mobile|electronices|6000|iphone|electronices|9
+alaa_el_lol|Raya|mobilePhone|electronics|10000|huawei|electronics|5
+nada_hatem|premoda|Tshirt|clothes|200|Zara|clothes|2
+nada_hatem|NadaStore|Shampo|haircare|200|Loreal|haircare|\5

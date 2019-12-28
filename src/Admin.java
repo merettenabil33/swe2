@@ -1,4 +1,3 @@
-import java.io.IOException;
 
 public interface Admin {
 	public void addproducttosystem() throws Exception;

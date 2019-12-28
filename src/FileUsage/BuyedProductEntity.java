@@ -1,3 +1,4 @@
+package FileUsage;
 public class BuyedProductEntity {
 	private String username;
 	private String storename;

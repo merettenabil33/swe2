@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import FileUsage.UserEntity;
+import FileUsage.fileWrite;
+import FileUsage.usersFileRead;
 
 public class systemUser implements SystemUserLogin , SystemUserRegister {
 
@@ -21,10 +24,11 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
     	   
     	}
         public systemUser() throws Exception {
-        	  userDatabase = FileUsage.userReadFromFile(userDatabase,"UserAccounts.txt");
-         	  AdminDatabase = FileUsage.userReadFromFile( AdminDatabase,"AdminAccounts.txt");
-          	  StoreODatabase = FileUsage.userReadFromFile(StoreODatabase,"StoreOwnerAccounts.txt");
-              collaboratorDatabase = FileUsage.userReadFromFile(collaboratorDatabase,"Collaborator.txt");
+        	
+        	  userDatabase = usersFileRead.userReadFromFile(userDatabase,"UserAccounts.txt");
+         	  AdminDatabase = usersFileRead.userReadFromFile( AdminDatabase,"AdminAccounts.txt");
+          	  StoreODatabase =usersFileRead.userReadFromFile(StoreODatabase,"StoreOwnerAccounts.txt");
+              collaboratorDatabase =usersFileRead.userReadFromFile(collaboratorDatabase,"Collaborator.txt");
        	  
 		}
         public void register(int x) throws Exception{
@@ -55,7 +59,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                 	  }
                   }
                   userDatabase.add(new UserEntity(nameOremail, password));
-                 FileUsage.usingBufferedWritter(nameOremail + "|" + password, "UserAccounts.txt");
+                 fileWrite.usingBufferedWritter(nameOremail + "|" + password, "UserAccounts.txt");
                   System.out.println("Register is done");
                   new NumberOfAddedAccounts().numberOf_addedUsersAccounts();
 
@@ -69,7 +73,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                     	  }
                       }
                       StoreODatabase.add(new UserEntity(nameOremail, password));
-                      FileUsage.usingBufferedWritter(nameOremail + "|" + password, "StoreOwnerAccounts.txt");
+                      fileWrite.usingBufferedWritter(nameOremail + "|" + password, "StoreOwnerAccounts.txt");
                       System.out.println("Register is done");
                       new NumberOfAddedAccounts().numberOf_addedStoreOwnerAccounts();
     			  }
@@ -82,7 +86,7 @@ public class systemUser implements SystemUserLogin , SystemUserRegister {
                     	  }
                       }
                       AdminDatabase.add(new UserEntity(nameOremail, password));
-                      FileUsage.usingBufferedWritter(nameOremail + "|" + password, "AdminAccounts.txt");
+                      fileWrite.usingBufferedWritter(nameOremail + "|" + password, "AdminAccounts.txt");
                       System.out.println("Register is done");
     			  }
     		  }

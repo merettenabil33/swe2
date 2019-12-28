@@ -5,9 +5,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import FileUsage.ProductEntity;
+import FileUsage.UserEntity;
+
 public class Adminstrator extends systemUser implements Admin {
 	public Adminstrator() throws Exception {
-		super();
+	
 	}
 
 	@SuppressWarnings("resource")

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Admin_View {
+	@SuppressWarnings("resource")
 	public void adminstrator_view() throws Exception {
 		Adminstrator a = new Adminstrator();
 		Scanner userInput = new Scanner(System.in);

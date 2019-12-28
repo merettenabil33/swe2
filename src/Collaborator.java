@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import FileUsage.fileWrite;
+
 public class Collaborator {
 	StoreOwnerAddProducts add = new StoreOwner();
 	SystemUserLogin sl = new systemUser();
@@ -35,7 +37,7 @@ public class Collaborator {
 			System.out.println("Quantity of products is:");
 			String Pproductquantity = userInput3.nextLine();
 
-			FileUsage
+			fileWrite
 					.usingBufferedWritter(
 							collaboratorName + "|" + StoreOwnerName + "|" + StoreName + "|" + Pname + "|" + Pcategory
 									+ "|" + Pprice + "|" + Brandname + "|" + Brandcategory + "|" + Pproductquantity,

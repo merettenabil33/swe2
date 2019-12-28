@@ -10,3 +10,6 @@ nesma_thabet|Raya|mobile|2|lenovo|5400.0|Haram
 nada_hatem|Raya|mobile|2|iphone|4200.0|Giza
 nesma_thabet|Raya|mobile|4|lenovo|6000|Monofya
 nesma_thabet|Raya|mobile|2|iphone|5400.0|Haram
+nada_hatem|NadaStore|laptop|1|lenovo|170.0|gizza
+nesma_thabet|laylaStore|Shampo|1|Pantene|200|Alex
+nesma_thabet|Raya|mobilePhone|1|huawei|10000|Haram

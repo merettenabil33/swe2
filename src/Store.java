@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+import FileUsage.StoreEntity;
+import FileUsage.fileWrite;
+import FileUsage.storesFilesRead;
+
 public class Store {
 
 	public String storelocation;
@@ -14,34 +18,34 @@ public class Store {
 		this.storetype = storetype;
 		this.storelocation = storelocation;
 
-		StoreDatabase = FileUsage.storeReadFromFile(StoreDatabase);
+		StoreDatabase = storesFilesRead.storeReadFromFile(StoreDatabase);
 	}
 
 	public Store() throws Exception {
-		StoreDatabase = FileUsage.storeReadFromFile(StoreDatabase);
+		StoreDatabase = storesFilesRead.storeReadFromFile(StoreDatabase);
 	}
 
 	public void addstoreinfo(String storename, String storeowneraccount, String storetype, String storelocation)
 			throws Exception {
-		boolean FoundinSystem1 = false;
-		boolean FoundinSystem2 = false;
+		boolean storeOwnerFound = false;
+		boolean storeFound = false;
 		for (int i = 0; i < new systemUser().StoreODatabase.size(); ++i) {
 			if (storeowneraccount.equals(new systemUser().StoreODatabase.get(i).getUsername())) {
-				FoundinSystem1 = true;
+				storeOwnerFound = true;
 			}
 		}
 		for (int i = 0; i < StoreDatabase.size(); ++i) {
 			if (StoreDatabase.get(i).getname().equals(storename)) {
 				System.out.print("This store is already found! ");
-				FoundinSystem2 = true;
+				storeFound = true;
 				return;
 			}
 		}
-		if (FoundinSystem1 == false) {
+		if (storeOwnerFound == false) {
 			System.out.println("This storeowner is not found");
 		}
-		if (FoundinSystem2 == false && FoundinSystem1 == true) {
-			FileUsage.usingBufferedWritter(storename + "|" + storeowneraccount + "|" + storetype + "|" + storelocation,
+		if (storeFound == false && storeOwnerFound == true) {
+			fileWrite.usingBufferedWritter(storename + "|" + storeowneraccount + "|" + storetype + "|" + storelocation,
 					"Store.txt");
 			System.out.println("Store is added");
 		}

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class User_View {
+	@SuppressWarnings("resource")
 	public void user_view() throws Exception {
 		User u = new User();
 		Scanner userInput = new Scanner(System.in);

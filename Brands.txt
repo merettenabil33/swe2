@@ -8,3 +8,5 @@ hp|electronices
 lenovo|electronices
 iphone|electronices
 casio|stationary
+huawei|electronics
+Zara|clothes

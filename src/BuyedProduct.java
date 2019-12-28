@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+
+import FileUsage.BuyedProductEntity;
+import FileUsage.buyedProductsFileRead;
+import FileUsage.fileWrite;
+
 @SuppressWarnings("unused")
 public class BuyedProduct {
 	private String username;
@@ -20,12 +25,12 @@ public class BuyedProduct {
 		this.pprice = price;
 		this.shippingaddress = address;
 
-		BuyedProductDatabase = FileUsage.buyed_productReadFromFile(BuyedProductDatabase);
+		BuyedProductDatabase = buyedProductsFileRead.buyed_productReadFromFile(BuyedProductDatabase);
 	}
 
 	public BuyedProduct() throws Exception {
 
-		BuyedProductDatabase = FileUsage.buyed_productReadFromFile(BuyedProductDatabase);
+		BuyedProductDatabase = buyedProductsFileRead.buyed_productReadFromFile(BuyedProductDatabase);
 	}
 
 	public void buyproduct(String uname, String storename ,String pname, String bamount, String bname, String pprice,
@@ -62,7 +67,7 @@ public class BuyedProduct {
 			if (Found == true) { // law is not the first time
 				System.out.println("You previously have bought a product, You miss our 5% off on first order!! ");
 			}
-			FileUsage.usingBufferedWritter(uname + "|" + storename  + "|" + pname + "|" + bamount + "|" + bname + "|" + pprice + "|" + shippingaddress,
+			fileWrite.usingBufferedWritter(uname + "|" + storename  + "|" + pname + "|" + bamount + "|" + bname + "|" + pprice + "|" + shippingaddress,
 					"BuyedProduct.txt");
 			new numberOfBoughtProducts().numberof_addedProducts();
 			System.out.println("Product is added to card");

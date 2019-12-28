@@ -2,5 +2,5 @@ laylaStore|nada_hatem|cosmetics|Dokki
 maha|nada_hatem|clothes|Haram
 premoda|nada_hatem|clothes|Haram
 Raya|alaa_el_lol|electronices|Dokki
-NadaStroe|nada_hatem|electronices|Haram
+NadaStore|nada_hatem|electronices|Haram
 Ba2al|alaa_el_lol|cosmetics|Giza

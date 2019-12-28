@@ -1,3 +1,4 @@
+package FileUsage;
 
 public class ProductOfStoreownerEntity {
 	private String storeOwnerName;
