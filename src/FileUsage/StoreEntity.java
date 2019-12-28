@@ -1,3 +1,4 @@
+package FileUsage;
 
 public class StoreEntity {
 	public StoreEntity(String name,String account, String type , String location) {

@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import FileUsage.ProductOfStoreownerEntity;
+import FileUsage.fileWrite;
+
 public class StoreOwner extends systemUser implements StoreOwnerAddColloborators ,StoreOwnerAddProducts,StoreOwnerAddStores,StoreOwnerBuyProducts {
 	
 
@@ -20,6 +23,7 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		System.out.println("Name of store is:");
 		String sname = userInput2.nextLine();
 		System.out.println("Wait for the admin to accept this may take time");
+		
 	}
 
 	@SuppressWarnings({ "resource" })
@@ -72,8 +76,8 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		System.out.println("Password: ");
 		String password = input.nextLine();
 		System.out.println("Your Collaborator account is added succesfully!");
-		FileUsage.usingBufferedWritter(storeOwnerName + "|" + collaboratorName, "storeOwnerCollaborator.txt");
-		FileUsage.usingBufferedWritter(storeOwnerName + "|" + collaboratorName + "|" + password, "Collaborator.txt");
+		fileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName, "storeOwnerCollaborator.txt");
+		fileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName + "|" + password, "Collaborator.txt");
 	}
 
 	@SuppressWarnings("resource")

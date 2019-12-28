@@ -1,3 +1,4 @@
+package FileUsage;
 public class ProductEntity {
 	private String offer;
 	private String price;

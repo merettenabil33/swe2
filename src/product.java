@@ -1,6 +1,10 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+import FileUsage.ProductEntity;
+import FileUsage.fileWrite;
+import FileUsage.productsFileRead;
+
 public class product {
 	protected String name;
 	String category;
@@ -15,11 +19,11 @@ public class product {
 		this.price = Pprice;
 		this.offer = Poffer;
 
-		prodctDatabase = FileUsage.productReadFromFile(prodctDatabase);
+		prodctDatabase = productsFileRead.productReadFromFile(prodctDatabase);
 	}
 
 	public product() throws Exception {
-		prodctDatabase = FileUsage.productReadFromFile(prodctDatabase);
+		prodctDatabase = productsFileRead.productReadFromFile(prodctDatabase);
 	}
 
 
@@ -32,7 +36,7 @@ public class product {
 
 		}
 
-		FileUsage.usingBufferedWritter(pname + "|" + pcategory + "|" + pprice + "|" + poffer, "Products.txt");
+		fileWrite.usingBufferedWritter(pname + "|" + pcategory + "|" + pprice + "|" + poffer, "Products.txt");
 		System.out.println("Product is added to system");
 	}
 }

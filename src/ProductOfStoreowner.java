@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+import FileUsage.ProductOfStoreownerEntity;
+import FileUsage.fileWrite;
+import FileUsage.productsOfStoreOwnerFileRead;
 @SuppressWarnings("unused")
 public class ProductOfStoreowner {
 
@@ -26,14 +29,14 @@ public class ProductOfStoreowner {
 		this.brandname = bname;
 		this.brandcategory = bcategory;
 
-		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+		ProductOfStoreownerDatabase = productsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
 				"ProductsOfStoreOwner.txt");
 
 	}
 
 	public ProductOfStoreowner() throws Exception {
 
-		ProductOfStoreownerDatabase = FileUsage.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
+		ProductOfStoreownerDatabase = productsOfStoreOwnerFileRead.product_sOwnerReadFromFile(ProductOfStoreownerDatabase,
 				"ProductsOfStoreOwner.txt");
 
 	}
@@ -65,7 +68,7 @@ public class ProductOfStoreowner {
 					return;
 				}
 			}
-			FileUsage.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|"
+			fileWrite.usingBufferedWritter(storeOwnerName + "|" + storename + "|" + pname + "|" + pcategory + "|"
 					+ pprice + "|" + bname + "|" + bcategory + "|" + pproductquantity, "ProductsOfStoreowner.txt");
 			System.out.println("Product is added to store with a brand");
 		}

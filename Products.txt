@@ -8,3 +8,4 @@ Shampo|haircare|50|no_offer
 chocolate|food|20|no_offer
 mobile|electronices|6000|no_Offer
 calculator|stationary|200|no_offer
+mobilePhone|electronics|10000|offer

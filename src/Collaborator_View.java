@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class Collaborator_View {
-	public boolean addProductWant = false;
+	public static boolean addProductWant = false;
 
+	@SuppressWarnings("resource")
 	public void collaborator_view() throws Exception {
 		Collaborator c = new Collaborator();
 		StoreOwner s = new StoreOwner();

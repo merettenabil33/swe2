@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class Storeowner_View {
-	public boolean storeowner_want_add_store = false;
+	public static boolean storeowner_want_add_store = false;
 
+	@SuppressWarnings("resource")
 	public void storeowner_view() throws Exception {
 		StoreOwner s = new StoreOwner();
 		Adminstrator a = new Adminstrator();
