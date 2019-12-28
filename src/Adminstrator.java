@@ -8,7 +8,7 @@ import java.util.Scanner;
 import FileUsage.ProductEntity;
 import FileUsage.UserEntity;
 
-public class Adminstrator extends systemUser implements Admin {
+public class Adminstrator extends SystemUser implements Admin {
 	public Adminstrator() throws Exception {
 	
 	}
@@ -24,7 +24,7 @@ public class Adminstrator extends systemUser implements Admin {
 		String Pprice = userInput2.nextLine();
 		System.out.println("offer on products is:");
 		String Poffer = userInput2.nextLine();
-		new product().addproductinfo(Pname, Pcategory, Pprice, Poffer);
+		new Product().addproductinfo(Pname, Pcategory, Pprice, Poffer);
 	}
 
 	boolean check = true;

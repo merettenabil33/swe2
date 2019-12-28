@@ -1,19 +1,18 @@
 import java.util.Scanner;
 
-public class Collaborator_View {
+public class CollaboratorView {
 	public static boolean addProductWant = false;
 
 	@SuppressWarnings("resource")
 	public void collaborator_view() throws Exception {
 		Collaborator c = new Collaborator();
-		StoreOwner s = new StoreOwner();
 		Scanner userInput = new Scanner(System.in);
 		c.CollaboratoerLogin();
 		if (addProductWant == true) {
-			if (s.checkx == true) {
+			if (StoreOwner.checkx == true) {
 				System.out.println("Store Owner Accepts Enterd Data");
 				c.useAsStoreOwner(1);
-			} else if (s.checkx == false) {
+			} else if (StoreOwner.checkx == false) {
 				System.out.println("Sorry! StoreOwner Declined your changes...");
 			}
 		}

@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class storesFilesRead {
+public class StoresFilesRead {
 
 	   @SuppressWarnings("resource")
 		public static ArrayList<StoreEntity> storeReadFromFile(ArrayList<StoreEntity> store) throws Exception{

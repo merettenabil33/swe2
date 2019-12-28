@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class productsOfStoreOwnerFileRead {
+public class ProductsOfStoreOwnerFileRead {
 	
 	   @SuppressWarnings("resource")
 		public static ArrayList<ProductOfStoreownerEntity> product_sOwnerReadFromFile(ArrayList<ProductOfStoreownerEntity> productstore,String FileName) throws Exception{

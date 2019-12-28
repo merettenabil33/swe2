@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Admin_View {
-	@SuppressWarnings("resource")
+public class AdminView {
+	@SuppressWarnings({ "resource", "static-access" })
 	public void adminstrator_view() throws Exception {
 		Adminstrator a = new Adminstrator();
 		Scanner userInput = new Scanner(System.in);
 		a.login(3);
-		if (new Storeowner_View().storeowner_want_add_store == true) {
+		if (new StoreownerView().storeowner_want_add_store == true) {
 			a.AcceptStore();
 		}
 		while (true) {

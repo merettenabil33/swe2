@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 import FileUsage.StoreEntity;
-import FileUsage.fileWrite;
-import FileUsage.storesFilesRead;
+import FileUsage.FileWrite;
+import FileUsage.StoresFilesRead;
 
 public class Store {
 
@@ -18,19 +18,19 @@ public class Store {
 		this.storetype = storetype;
 		this.storelocation = storelocation;
 
-		StoreDatabase = storesFilesRead.storeReadFromFile(StoreDatabase);
+		StoreDatabase = StoresFilesRead.storeReadFromFile(StoreDatabase);
 	}
 
 	public Store() throws Exception {
-		StoreDatabase = storesFilesRead.storeReadFromFile(StoreDatabase);
+		StoreDatabase = StoresFilesRead.storeReadFromFile(StoreDatabase);
 	}
 
 	public void addstoreinfo(String storename, String storeowneraccount, String storetype, String storelocation)
 			throws Exception {
 		boolean storeOwnerFound = false;
 		boolean storeFound = false;
-		for (int i = 0; i < new systemUser().StoreODatabase.size(); ++i) {
-			if (storeowneraccount.equals(new systemUser().StoreODatabase.get(i).getUsername())) {
+		for (int i = 0; i < new SystemUser().StoreODatabase.size(); ++i) {
+			if (storeowneraccount.equals(new SystemUser().StoreODatabase.get(i).getUsername())) {
 				storeOwnerFound = true;
 			}
 		}
@@ -45,7 +45,7 @@ public class Store {
 			System.out.println("This storeowner is not found");
 		}
 		if (storeFound == false && storeOwnerFound == true) {
-			fileWrite.usingBufferedWritter(storename + "|" + storeowneraccount + "|" + storetype + "|" + storelocation,
+			FileWrite.usingBufferedWritter(storename + "|" + storeowneraccount + "|" + storetype + "|" + storelocation,
 					"Store.txt");
 			System.out.println("Store is added");
 		}

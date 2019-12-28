@@ -1,11 +1,11 @@
-public class check_user_input {
+public class CheckUserInput {
 	public boolean FoundingUser;
 	public boolean FoundingStoreowner;
     public boolean FoundingStore;
 	public boolean check_user_account(String uname) throws Exception {
 		FoundingUser = false;
-		for (int i = 0; i < new systemUser().userDatabase.size(); i++) {
-			if (uname.equals(new systemUser().userDatabase.get(i).getUsername())) {
+		for (int i = 0; i < new SystemUser().userDatabase.size(); i++) {
+			if (uname.equals(new SystemUser().userDatabase.get(i).getUsername())) {
 				FoundingUser = true;
 			}
 		}
@@ -14,8 +14,8 @@ public class check_user_input {
 
 	public boolean check_storeowner_account(String storeownername) throws Exception {
 		FoundingStoreowner = false;
-		for (int i = 0; i < new systemUser().StoreODatabase.size(); i++) {
-			if (storeownername.equals(new systemUser().StoreODatabase.get(i).getUsername())
+		for (int i = 0; i < new SystemUser().StoreODatabase.size(); i++) {
+			if (storeownername.equals(new SystemUser().StoreODatabase.get(i).getUsername())
 					&& storeownername != (new ProductOfStoreowner().ProductOfStoreownerDatabase.get(i)
 							.getStoreOwnerName())) {
 				FoundingStoreowner = true;

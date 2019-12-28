@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class usersFileRead {
+public class UsersFileRead {
 
 	   @SuppressWarnings("resource")
 	public static ArrayList<UserEntity> userReadFromFile(ArrayList<UserEntity> user,String FileName) throws Exception {

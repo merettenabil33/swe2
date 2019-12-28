@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class brandsFileRead {
+public class BrandsFileRead {
 
 	
 	   @SuppressWarnings("resource")

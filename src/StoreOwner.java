@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import FileUsage.ProductOfStoreownerEntity;
-import FileUsage.fileWrite;
+import FileUsage.FileWrite;
 
-public class StoreOwner extends systemUser implements StoreOwnerAddColloborators ,StoreOwnerAddProducts,StoreOwnerAddStores,StoreOwnerBuyProducts {
+public class StoreOwner extends SystemUser implements StoreOwnerAddColloborators ,StoreOwnerAddProducts,StoreOwnerAddStores,StoreOwnerBuyProducts {
 	
 
 	public StoreOwner() throws Exception {
@@ -76,8 +76,8 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		System.out.println("Password: ");
 		String password = input.nextLine();
 		System.out.println("Your Collaborator account is added succesfully!");
-		fileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName, "storeOwnerCollaborator.txt");
-		fileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName + "|" + password, "Collaborator.txt");
+		FileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName, "storeOwnerCollaborator.txt");
+		FileWrite.usingBufferedWritter(storeOwnerName + "|" + collaboratorName + "|" + password, "Collaborator.txt");
 	}
 
 	@SuppressWarnings("resource")
@@ -131,7 +131,7 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		}
 		collaboratorEdits();
 	}
-	boolean checkx = true;
+	static boolean checkx = false;
 	@SuppressWarnings({ "resource", "unused" })
 	public boolean collaboratorEdits() throws Exception
 	{
@@ -145,6 +145,7 @@ public class StoreOwner extends systemUser implements StoreOwnerAddColloborators
 		int approve = userInput.nextInt();
 		if(approve==1)
 		{
+			checkx = true;
 			return checkx;
 		}
 		else if (approve==2)

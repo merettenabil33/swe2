@@ -4,11 +4,11 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import FileUsage.fileWrite;
+import FileUsage.FileWrite;
 
 public class Collaborator {
 	StoreOwnerAddProducts add = new StoreOwner();
-	SystemUserLogin sl = new systemUser();
+	SystemUserLogin sl = new SystemUser();
 
 	public Collaborator() throws Exception {
 		super();
@@ -37,7 +37,7 @@ public class Collaborator {
 			System.out.println("Quantity of products is:");
 			String Pproductquantity = userInput3.nextLine();
 
-			fileWrite
+			FileWrite
 					.usingBufferedWritter(
 							collaboratorName + "|" + StoreOwnerName + "|" + StoreName + "|" + Pname + "|" + Pcategory
 									+ "|" + Pprice + "|" + Brandname + "|" + Brandcategory + "|" + Pproductquantity,
@@ -48,7 +48,7 @@ public class Collaborator {
 		} else if (x == 1) {
 			FileReader fr = new FileReader("History.txt");
 			BufferedReader br = new BufferedReader(fr);
-			FileWriter fw = new FileWriter("ProductsOfStoreOwner.txt", true);
+			FileWriter fw = new FileWriter("ProductsOfStoreowner.txt", true);
 			String s;
 
 			while ((s = br.readLine()) != null) { // read a line

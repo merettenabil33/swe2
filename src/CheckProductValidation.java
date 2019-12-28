@@ -1,4 +1,4 @@
-public class check_product_validation {
+public class CheckProductValidation {
 	public boolean ValidProduct;
 	public boolean ValidAmount;
 

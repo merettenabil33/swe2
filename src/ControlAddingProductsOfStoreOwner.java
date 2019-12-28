@@ -1,15 +1,15 @@
 
-public class Control_Adding_ProductsOfStoreOwner {
+public class ControlAddingProductsOfStoreOwner {
 	boolean FoundProductSystem;
 	boolean FoundBrandSystem;
 	boolean FoundStoreSystem;
 
 	public boolean check_product_in_system(String pname, String pcategory, String pprice) throws Exception {
 		FoundProductSystem = false;
-		for (int i = 0; i < new product().prodctDatabase.size(); ++i) {
-			if ((pname.equals(new product().prodctDatabase.get(i).getName()))
-					&& (pcategory.equals(new product().prodctDatabase.get(i).getCategory()))
-					&& (pprice.equals(new product().prodctDatabase.get(i).getPrice()))) {
+		for (int i = 0; i < new Product().prodctDatabase.size(); ++i) {
+			if ((pname.equals(new Product().prodctDatabase.get(i).getName()))
+					&& (pcategory.equals(new Product().prodctDatabase.get(i).getCategory()))
+					&& (pprice.equals(new Product().prodctDatabase.get(i).getPrice()))) {
 				FoundProductSystem = true;
 
 			}

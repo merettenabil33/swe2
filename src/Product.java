@@ -2,10 +2,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import FileUsage.ProductEntity;
-import FileUsage.fileWrite;
-import FileUsage.productsFileRead;
+import FileUsage.FileWrite;
+import FileUsage.ProductsFileRead;
 
-public class product {
+public class Product {
 	protected String name;
 	String category;
 	String price;
@@ -13,17 +13,17 @@ public class product {
 
 	ArrayList<ProductEntity> prodctDatabase = new ArrayList<ProductEntity>();
 
-	public product(String Pname, String Pcategory, String Pprice, String Poffer) throws Exception {
+	public Product(String Pname, String Pcategory, String Pprice, String Poffer) throws Exception {
 		this.name = Pname;
 		this.category = Pcategory;
 		this.price = Pprice;
 		this.offer = Poffer;
 
-		prodctDatabase = productsFileRead.productReadFromFile(prodctDatabase);
+		prodctDatabase = ProductsFileRead.productReadFromFile(prodctDatabase);
 	}
 
-	public product() throws Exception {
-		prodctDatabase = productsFileRead.productReadFromFile(prodctDatabase);
+	public Product() throws Exception {
+		prodctDatabase = ProductsFileRead.productReadFromFile(prodctDatabase);
 	}
 
 
@@ -36,7 +36,7 @@ public class product {
 
 		}
 
-		fileWrite.usingBufferedWritter(pname + "|" + pcategory + "|" + pprice + "|" + poffer, "Products.txt");
+		FileWrite.usingBufferedWritter(pname + "|" + pcategory + "|" + pprice + "|" + poffer, "Products.txt");
 		System.out.println("Product is added to system");
 	}
 }
