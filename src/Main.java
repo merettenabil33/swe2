@@ -7,7 +7,6 @@ public class Main {
 		User u = new User();
 		StoreOwner s = new StoreOwner();
 		Adminstrator a = new Adminstrator();
-		Product p = new Product();
 		Scanner userInput = new Scanner(System.in);
 		while (true) {
 			System.out.println("For register enter 1: ");
