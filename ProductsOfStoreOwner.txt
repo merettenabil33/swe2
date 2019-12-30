@@ -11,4 +11,3 @@ alaa_el_lol|Raya|mobilePhone|electronics|10000|huawei|electronics|5
 nada_hatem|premoda|Tshirt|clothes|200|Zara|clothes|2
 nada_hatem|NadaStore|Shampo|haircare|200|Loreal|haircare|5
 nada_hatem|laylaStore|chocolate|food|20|Dairymilk|chocolate|100
-noran|nada_hatem|laylaStore|lacket|clothes|100|Zara|clothes|5
